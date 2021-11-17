@@ -10,6 +10,7 @@ const FormikForm = () => {
             formik.resetForm();
         }, 2000);
     }
+
     const formik = useFormik({
         // initial values
         initialValues: {
@@ -25,7 +26,7 @@ const FormikForm = () => {
                 .required(),
             email: Yup.string()
                 .required()
-                .email('Invalid emial format'),
+                .email('Invalid email format'),
             password: Yup.string()
                 .required()
                 .min(8, 'Should more than 8 characters')
@@ -37,7 +38,7 @@ const FormikForm = () => {
                 .required()
                 .oneOf([Yup.ref('password')], 'Password must match'),
             agreement: Yup.bool()
-                .isTrue('This files must be checked')
+                .isTrue('This filed must be checked')
         }),
         // handle submission
         onSubmit: doRegister
