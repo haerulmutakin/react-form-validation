@@ -31,7 +31,7 @@ const FormikForm = () => {
                 .required()
                 .min(8, 'Should more than 8 characters')
                 .matches(/[a-z]/g, 'Should contain at least 1 lowercase')
-                .matches(/[A-Z]/g, 'Should contain at leat 1 uppercase')
+                .matches(/[A-Z]/g, 'Should contain at least 1 uppercase')
                 .matches(/[0-9]/g, 'Should contain at least 1 number')
                 .matches(/^\S*$/, 'Should not contain spaces'),
             confirmPassword: Yup.string()
