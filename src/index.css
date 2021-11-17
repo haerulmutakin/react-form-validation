@@ -56,6 +56,11 @@ button {
   border-radius: 4px;
 }
 
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 div.error {
   font-size: 13px;
   color: #dc3545;
