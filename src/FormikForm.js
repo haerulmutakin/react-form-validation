@@ -28,10 +28,11 @@ const FormikForm = () => {
                 .email('Invalid emial format'),
             password: Yup.string()
                 .required()
-                .min(8, 'Should more thand 8 characters')
-                .matches(/[a-z]/g, 'At least 1 lowercase')
-                .matches(/[A-Z]/g, 'At leat 1 uppercase')
-                .matches(/[0-9]/g, 'At least 1 number'),
+                .min(8, 'Should more than 8 characters')
+                .matches(/[a-z]/g, 'Should contain at least 1 lowercase')
+                .matches(/[A-Z]/g, 'Should contain at leat 1 uppercase')
+                .matches(/[0-9]/g, 'Should contain at least 1 number')
+                .matches(/^\S*$/, 'Should not contain spaces'),
             confirmPassword: Yup.string()
                 .required()
                 .oneOf([Yup.ref('password')], 'Password must match'),
