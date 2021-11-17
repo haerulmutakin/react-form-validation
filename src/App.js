@@ -1,9 +1,9 @@
-import SignUp from "./SignUp";
+import FormikForm from "./FormikForm";
 
 function App() {
   return (
     <div className="App">
-      <SignUp />
+      <FormikForm />
     </div>
   );
 }

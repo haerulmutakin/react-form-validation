@@ -1,4 +1,4 @@
-const SignUp = () => {
+const FormikForm = () => {
     return ( 
         <div>
             <h1>Sign Up Form</h1>
@@ -45,4 +45,4 @@ const SignUp = () => {
      );
 }
  
-export default SignUp;
+export default FormikForm;
