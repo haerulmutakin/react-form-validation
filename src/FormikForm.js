@@ -1,16 +1,15 @@
-import { useFormik }  from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const FormikForm = () => {
 
-    const doRegister = (data) => {
-        console.log(data);
+    const doregister = (values) => {
+        console.log('form values', values);
         setTimeout(() => {
             formik.setSubmitting(false);
             formik.resetForm();
         }, 2000);
     }
-
     const formik = useFormik({
         // initial values
         initialValues: {
@@ -31,18 +30,19 @@ const FormikForm = () => {
                 .required()
                 .min(8, 'Should more than 8 characters')
                 .matches(/[a-z]/g, 'Should contain at least 1 lowercase')
-                .matches(/[A-Z]/g, 'Should contain at leat 1 uppercase')
+                .matches(/[A-Z]/g, 'Should contain at least 1 uppercase')
                 .matches(/[0-9]/g, 'Should contain at least 1 number')
                 .matches(/^\S*$/, 'Should not contain spaces'),
             confirmPassword: Yup.string()
                 .required()
                 .oneOf([Yup.ref('password')], 'Password must match'),
             agreement: Yup.bool()
-                .isTrue('This filed must be checked')
+                .isTrue('Field must be checked')
         }),
         // handle submission
-        onSubmit: doRegister
+        onSubmit: doregister
     });
+    console.log(formik);
     return ( 
         <div>
             <h1>Register Form</h1>
