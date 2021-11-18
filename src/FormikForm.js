@@ -42,7 +42,6 @@ const FormikForm = () => {
         // handle submission
         onSubmit: doregister
     });
-    console.log(formik);
     return ( 
         <div>
             <h1>Register Form</h1>
